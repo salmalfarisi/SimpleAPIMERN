@@ -15,13 +15,11 @@ const Edit = (props) => {
 		var url = 'http://localhost:666/' + id;
 		const resultapi = await axios.get(url);
 		try {
-			//console.log(resultapi.data.data[0].title)
 			setresult(resultapi.data.success);
 			setId(resultapi.data.data[0].id);
 			setTitle(resultapi.data.data[0].title);
 			setTitlePrimForm(resultapi.data.data[0].title);
 			setDesc(resultapi.data.data[0].description);
-			//console.log(resultapi.data.data[0].id)
 		} 
 		catch (e)
 		{
@@ -36,7 +34,6 @@ const Edit = (props) => {
 		if(e.target.value === "/update")
 		{
 			const inputform = { title, description };
-			//alert(inputform);
 			var url = 'http://localhost:666/update/' + id;
 			const response = await axios({
 				method: 'put',
@@ -44,7 +41,6 @@ const Edit = (props) => {
 				headers: {}, 
 				data: inputform
 			});
-			console.log(response);
 			var getsuccess = response.data.success;
 			var getresult = response.data.message;
 			if(getsuccess === true)

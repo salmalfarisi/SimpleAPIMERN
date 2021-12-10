@@ -13,10 +13,8 @@ const Tambah = (props) => {
 		var url = 'http://localhost:666/id/latest';
 		const resultapi = await axios.get(url);
 		try {
-			//console.log(resultapi.data.data[0].title)
 			setresult(resultapi.data.success);
 			setId(resultapi.data.message);
-			//console.log(resultapi.data.data[0].id)
 		} 
 		catch (e)
 		{
@@ -31,7 +29,6 @@ const Tambah = (props) => {
 		if(e.target.value === "/store")
 		{
 			const inputform = { title, description };
-			//alert(inputform);
 			var url = 'http://localhost:666/store/';
 			const response = await axios({
 				method: 'post',

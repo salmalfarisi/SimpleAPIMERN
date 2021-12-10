@@ -5,13 +5,14 @@ import Tambah from './Tambah';
 import Edit from './Edit';
 
 function App() {
+	//Dictionary
 	const [isLoggedIn, setCurrentURL] = useState(window.location.pathname);
 	const [loadData, setData] = useState({ data:[] });
 	const [LoadDetail, setDetail] = useState({ data:[] });
 	const [result, setresult] = useState({ success:false });
-	// cara dapetin string dari sini ???
 	const [showmessage, setmessage] = useState({ message:"" });
 	
+	//Function
 	const ChangeRoute = (urlroute) => {
 		setCurrentURL(urlroute)
 	}
@@ -100,8 +101,8 @@ function App() {
 		);
 	}
 	
+	//Check if url same like url in App.js
 	function Cekhome(props) {
-		// belum tahu mau ngapain
 		var cekurl = window.location.pathname;
 		if (cekurl === '/') 
 		{
@@ -109,6 +110,7 @@ function App() {
 		}
 	}
 	
+	// Delete data function
 	async function DeleteData(id) {
 		if(id !== null)
 		{
